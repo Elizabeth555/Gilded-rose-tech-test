@@ -16,15 +16,12 @@ function update_quality() {
       if (items[i]===specialCases[n]) {
         unique.push(items[i])
       } else {
-        standard.push(items[i])
+        items.sell_in[i] -= 1;
+        (items[i].sell_in > 0) ? items[i].quality -= 1 : items[i].quality -= 2;
       };
     };
   };
 
-  for (var i = 0; i < standard[i]; i++) {
-      (standard[i].sell_in > 0) ? standard[i].quality -1 : standard[i].quality -2;
-      standard.sell_in -1
-  };
 
 //
 //   for (var i = 0; i < items.length; i++) {
